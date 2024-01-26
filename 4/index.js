@@ -8,7 +8,13 @@ let myInfoText=`Всем привет! Меня зовут, ${MyName}.Сейча
 ${numberOfMonth} месяцев.
 Я уверена, что пройду данный курс до конца!`
 
+//задание2
 myInfoText=myInfoText.replaceAll('javaScript', 'JAVASCRIPT');
 console.log(myInfoText)
-console.log (myInfoText.length);
-console.log()
+console.log (myInfoText.length)
+console.log(myInfoText.charAt(0))
+console.log(myInfoText.charAt(myInfoText.length -1))
+
+//задание 3
+const userName=prompt('Как вас зовут?')
+alert(toUpperCase(userName), userName.replaceAll(' ', ' '))
