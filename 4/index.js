@@ -30,10 +30,20 @@
 // alert(`Результат: ${userString.slice(startSliceIndex, endSliceIndex)}`);
 
 //задание 6
-let userText = prompt('Введите текст')
-const userwordFromText = prompt('Введите слово из текста')
-userText = userText.trim();
-userwordFromText = userwordFromText.trim();
-let indexOfWord = userText.indexOf(userwordFromText);
-let result = userText.slice(0, indexOfWord);
-alert("Результат: " + result);
+// let userText = prompt("Введите текст").trim();
+// const userwordFromText = prompt("Введите слово из текста").trim();
+// let indexOfWord = userText.indexOf(userwordFromText);
+// let result = userText.slice(0, indexOfWord);
+// alert("Результат: " + result);
+
+//7 задание
+let javaScriptDescription = 'Вам дан следующий текст, взятый из Википедии: "JavaScript - мультипарадигменный язык программирования. Поддерживает объектно-ориентированный, императивный и функциональный стили. Является реализацией спецификации ECMAScript. JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений."'
+let middleSymbol = Math.floor(javaScriptDescription.length/2)
+let trimString = javaScriptDescription.slice(0, middleSymbol).trim()
+trimString=trimString.replaceAll('а', 'А')
+let tripleString = trimString.repeat(3);
+let middleSymbolString = tripleString.charAt(Math.floor(tripleString.length/2))
+console.log(tripleString)
+console.log(middleSymbolString)
+
+
