@@ -107,10 +107,10 @@
 // console.log(sum);
 
 //задание 6
-let clientName = prompt ('Введите имя клиента');
-let clientSpentForAllTime =prompt('Сколько клиент потратил за все время?');
+let clientName = prompt("Введите имя клиента");
+let clientSpentForAllTime =+ prompt("Сколько клиент потратил за все время?");
 
-let clientSpentToday =prompt('Сколько клиент потратил за сегодня?');
+let clientSpentToday =+ prompt("Сколько клиент потратил за сегодня?");
 let discount = 0;
 if (clientSpentForAllTime > 100 && clientSpentForAllTime < 300) {
   discount = 10;

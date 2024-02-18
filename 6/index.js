@@ -32,20 +32,37 @@
 //     return sum;
 //   }
 
-//3
-  function getDivisorsCount(number = 1) {
-    if (number < 0 || !Number.isInteger(number)) {
-      alert("number должен быть целым числом и больше нуля!");
-      return;
-    }
+// //3
+//   function getDivisorsCount(number = 1) {
+//     if (number < 0 || !Number.isInteger(number)) {
+//       alert("number должен быть целым числом и больше нуля!");
+//       return;
+//     }
     
-    let count = 0;
+//     let count = 0;
     
-    for (let i = 1; i <= number; i++) {
-      if (number % i === 0) {
-        count++;
-      }
-    }
+//     for (let i = 1; i <= number; i++) {
+//       if (number % i === 0) {
+//         count++;
+//       }
+//     }
     
-    return count;
+//     return count;
+//   }
+
+//задание 4
+function checkQuestionAnswer(question, correctAnswer) {
+  const userAnswer = prompt(question).trim().toLowerCase();
+  const formattedCorrectAnswer = correctAnswer.trim().toLowerCase();
+  if (userAnswer === formattedCorrectAnswer) {
+      alert('Ответ верный');
+  } else {
+      alert('Ответ неверный');
   }
+}
+
+checkQuestionAnswer('Арбуз это фрукт или ягода?', 'Ягода');
+checkQuestionAnswer('Сколько в среднем зубов у взрослого человека?', '32');
+checkQuestionAnswer('Как называется самая маленькая птица в мире?', 'Колибри');
+
+
