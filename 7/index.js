@@ -1,4 +1,3 @@
-// Исходный массив
 const peopleWaiting = ['Кристина', 'Светлана', 'Артем', 'Глеб', 'Олег', 'Кирилл', 'Мария'];
 
 // Функция выдачи посылки и удаления клиента из начала массива
@@ -17,11 +16,11 @@ function leaveQueueWithoutParcel() {
   }
 }
 
-// Шаг 1: Кристина и Олег получили посылки и ушли из очереди
+// Получили посылки и ушли из очереди
 giveParcel();
 giveParcel();
 
-// Шаг 2: Теперь очередь подошла к Кириллу, остальные уходят
+// Очередь подошла к Кириллу, остальные уходят
 const indexOfKirill = peopleWaiting.indexOf('Кирилл');
 if (indexOfKirill !== -1) {
   peopleWaiting.splice(indexOfKirill, 1); // Удаляем Кирилла из массива
@@ -29,3 +28,61 @@ if (indexOfKirill !== -1) {
     leaveQueueWithoutParcel(); // Удаляем оставшихся людей, которые не получили посылку
   }
 }
+
+//2 задание
+function getSumOfSequence(number) {
+  let arr = [];
+  for (let i = 1; i <= number; i++) {
+    arr.push(i);
+  }
+  return arr[0] + arr[arr.length - 1];
+}
+
+console.log(getSumOfSequence(5)); // Вернет 6
+
+//задание 3
+const coffees = ['Latte', 'Cappuccino', 'Americano'];
+
+function searchCoffee() {
+  const coffeeName = prompt("Поиск кофе по названию:");
+  const index = coffees.findIndex(coffee => coffee.toLowerCase() === coffeeName.toLowerCase());
+
+  if (index !== -1) {
+    alert(`Держите ваш любимый кофе ${coffees[index]}. Он ${index + 1}-й по популярности в нашей кофейне.`);
+  } else {
+    alert("К сожалению, такого вида кофе нет в наличии");
+  }
+}
+
+searchCoffee();
+
+//задание4
+const coffees = ['Latte', 'Cappuccino', 'Americano'];
+const prices = [1.5, 1, 2];
+
+const updatedPrices = prices.map(price => price + 0.5);
+
+coffees.forEach((coffee, index) => {
+  alert(`Кофе ${coffee} сейчас стоит ${updatedPrices[index]} евро`);
+});
+
+//задание 5
+let clientsEstimations = [];
+
+function askClientToGiveEstimation() {
+  let estimation = prompt("Как вы оцениваете нашу кофейню от 1 до 10?");
+  estimation = Number(estimation);
+  if (!isNaN(estimation) && estimation >= 1 && estimation <= 10) {
+    clientsEstimations.push(estimation);
+  }
+}
+
+for (let i = 0; i < 5; i++) {
+  askClientToGiveEstimation();
+}
+
+const goodEstimations = clientsEstimations.filter(estimation => estimation > 5).length;
+const notGoodEstimations = clientsEstimations.filter(estimation => estimation <= 5).length;
+
+alert(`Всего положительных оценок: ${goodEstimations}, Всего отрицательных оценок: ${notGoodEstimations}`);
+
