@@ -8,7 +8,7 @@ const peopleWaiting = [
   "Мария",
 ];
 
-// Функция выдачи посылки и удаления клиента из начала массива
+// Функция выдачи посылки и удаления из начала массива
 function giveParcel() {
   const firstPerson = peopleWaiting.shift(); // Удаляем из начала массива первого человека
   if (firstPerson) {
@@ -81,9 +81,23 @@ coffees.forEach((coffee, index) => {
 //задание 5
 let clientsEstimations = [];
 function askClientToGiveEstimation() {
-  let estimation = prompt("Как вы оцениваете нашу кофейню от 1 до 10?");
-  estimation = Number(estimation);
+  let estimation =+ prompt("Как вы оцениваете нашу кофейню от 1 до 10?");
   if (!isNaN(estimation) && estimation >= 1 && estimation <= 10) {
     clientsEstimations.push(estimation);
   }
 }
+
+for (let i = 0; i < 5; i++) {
+  askClientToGiveEstimation();
+}
+
+const goodEstimations = clientsEstimations.filter(
+  (estimation) => estimation > 5
+).length;
+const notGoodEstimations = clientsEstimations.filter(
+  (estimation) => estimation <= 5
+).length;
+
+alert(
+  `Всего положительных оценок: ${goodEstimations}, Всего отрицательных оценок: ${notGoodEstimations}`
+);
