@@ -28,7 +28,6 @@ function leaveQueueWithoutParcel() {
 
 // Получили посылки и ушли из очереди
 giveParcel();
-giveParcel();
 
 // Очередь подошла к Кириллу, остальные уходят
 const indexOfKirill = peopleWaiting.indexOf("Кирилл");
@@ -81,7 +80,7 @@ coffees.forEach((coffee, index) => {
 //задание 5
 let clientsEstimations = [];
 function askClientToGiveEstimation() {
-  let estimation =+ prompt("Как вы оцениваете нашу кофейню от 1 до 10?");
+  let estimation = +prompt("Как вы оцениваете нашу кофейню от 1 до 10?");
   if (!isNaN(estimation) && estimation >= 1 && estimation <= 10) {
     clientsEstimations.push(estimation);
   }
@@ -101,3 +100,29 @@ const notGoodEstimations = clientsEstimations.filter(
 alert(
   `Всего положительных оценок: ${goodEstimations}, Всего отрицательных оценок: ${notGoodEstimations}`
 );
+
+//задание 6
+const numbers = [10, 4, 100, -5, 54, 2];
+let cub = 0;
+for (let i = 0; i < numbers.length; i++) {
+  cub += numbers[i] ** 3;
+}
+console.log(cub);
+
+let cub2 = 0;
+for (let i of numbers) {
+  cub2 += i ** 3;
+}
+console.log(cub2);
+
+let cub3 = 0;
+numbers.forEach((i) => {
+  cub3 += i ** 3;
+});
+console.log(cub3);
+
+let cub4 = numbers.reduce((accum, currentValue) => {
+  return accum + (currentValue ** 3);
+}, 0);
+
+console.log(cub4);
