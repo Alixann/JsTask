@@ -33,3 +33,17 @@ function getDaysBeforeBirthday(nextBirthdayDate) {
   }
   
   
+  //3
+  function addDays(date, days = 1) {
+    const timestamp = date.getTime(); // получаем timestamp для переданной даты
+    const millisecondsInADay = 86400000; // количество миллисекунд в одном дне (24 часа * 60 минут * 60 секунд * 1000 миллисекунд)
+  
+    // суммируем timestamp с учетом количества дней и переводим результат обратно в объект Date
+    return new Date(timestamp + days * millisecondsInADay);
+  }
+  
+  // Пример использования функции
+  const currentDate = new Date(); // текущая дата
+  const updatedDate = addDays(currentDate, 7); // добавляем 7 дней к текущей дате
+  console.log(updatedDate);
+  
